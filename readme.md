@@ -12,6 +12,7 @@ Before training or testing, you need to prepare the deep-learning environment:
 ```
 Python 3.9
 CPU or NVIDIA GPU + CUDA CuDNN
+Linux OS
 ```
 
 ## Environment Preparing
