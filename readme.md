@@ -28,9 +28,9 @@ For training dataset, Please put the dataset on ../datasets/train/xxx
 ## Training process
 
 Run 
-
+```
 python3 train.py --dataroot hela_cell --gpu_ids 0,1  --checkpoints_dir ./checkpoints/ckp_hela_complex --batch_size 16  --ngf 64  --no_flip
-
+```
 ## Testing process
 
 For Hela cell despeckle results, run:
