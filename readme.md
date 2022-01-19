@@ -22,9 +22,9 @@ pip install -r requirement.txt
 
 ## Dataset preparing
 We provide representitive testing dataset due to the limits of the upload file size, including the Hela cells with Petri dish and the nasopharyngeal carcinoma cell with thin tape. Please put these datasets on ../datasets/test/xxx
-
+```
 For training dataset, Please put the dataset on ../datasets/train/xxx
-
+```
 ## Training process
 
 Run 
@@ -43,7 +43,7 @@ For nasopharyngeal_carcinoma_cell despeckle results, run:
 python3 test.py --dataroot nasopharyngeal_carcinoma_cell  --checkpoints_dir ./checkpoints/ckp_C666_complex  --ngf 64 --results_dir ./results/ckp_C666_complex
 ```
 
-The default results are saved in ./results/xxx/dif2IP/test_latest/images, where xxx_fake_BI.bmp and xxx_fake_BP are the outputs of our network, xxx_real_BI.bmp and xxx_real_BP are the ground truths, and the xxx_real_A.bmp is the speckle image. You can also open ./results/xxx/dif2IP/test_latest/images/index.html to check the entire results.
+The default results are saved in ./results/xxx/dif2IP/test_latest/images, where xxx_fake_BI.bmp and xxx_fake_BP.mat are the outputs of our network, xxx_real_BI.bmp and xxx_real_BP.mat are the ground truths, and the xxx_real_A.bmp is the speckle image. You can also open ./results/xxx/dif2IP/test_latest/images/index.html to check the entire results.
 
 
 Here we present the despeckle results of two representative datasets c666-1 and Hela. For more results please see the manuscript.
