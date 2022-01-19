@@ -1,6 +1,4 @@
 import os
-
-
 from scipy.io.matlab.mio import savemat
 from data.base_dataset import BaseDataset, get_params, get_transform, transform_phase
 
@@ -41,31 +39,7 @@ class AlignedDataset(BaseDataset):
                 self.dif = sorted(glob.glob(os.path.join('../datasets/train/'+self.dataroot+'/dif', '*' + '.bmp')))
                 self.I = [img.replace('dif', 'I') for img in self.dif]
                 self.P = [img.replace('dif', 'P').replace('amp','angle') for img in self.dif]
-
-            # # TWO kinds data
-            # if self.dataroot not in ['0513', 'simu']:# 0411-org 0420-hela 0513-hela-live   
-            #     self.dif = sorted(glob.glob(os.path.join('/data/shahao/'+self.dataroot+'/dif', '*' + '.bmp')))
-            #     self.I = [img.replace('dif', 'I') for img in self.dif]
-            #     P = [img.replace('dif', 'P') for img in self.dif]
-            #     self.P = [img.replace('bmp', 'mat') for img in P]
-            # elif self.dataroot in ['0513']:                
-            #     #### special process for living hela dataset
-            #     dir = '/data/shahao/0513/dif'
-            #     list_file = os.listdir(dir)
-            #     self.dif = []
-            #     for ai in list_file:
-            #         sp = ai.split('_')
-            #         group = sp[0]
-            #         if group in ['5', '6', '11', '12', '14', '17','1', '2', '3', '4', '7']:
-            #             self.dif.append(os.path.join(dir, ai)) 
-            #     self.I = [img.replace('dif', 'I') for img in self.dif]
-            #     P = [img.replace('dif', 'P') for img in self.dif]
-            #     self.P = [img.replace('bmp', 'mat') for img in P]
-              
-            # elif self.dataroot in ['simu']: # simulate data
-            #     self.dif = sorted(glob.glob("/data/shahao/simu/simu_scatter5"+"/dif/*.bmp")) #train_input_amp1_00000.npy
-            #     self.I = [img.replace('simu_scatter5/dif', 'simu/I') for img in self.dif]  #train_amp/train_amp1_00000.bmp
-            #     self.P = [img.replace('I','P').replace('amp', 'angle') for img in self.I]   #train_phase/train_angle1_00000.bmp   
+         
         else:
             # all_data
             if self.dataroot not in ['simu_scatter5', 'simu_scatter7', 'simu_scatter9', 'simu_scatter11', 'simu_scatter13', \
@@ -83,38 +57,6 @@ class AlignedDataset(BaseDataset):
                 self.P = self.dif # no ground truth in living_hela_video and breast_cancer_tissue_2048 datasets
             else:
                 print(self.dataroot, 'not in any test datasets!')
-
-            # if self.dataroot not in ['0513' , 'simu', '0513_video', '0330_crop']:# 0411-org 0420-hela 0513-hela-live   0516-bad
-            #     self.dif = sorted(glob.glob(os.path.join('/data/shahao/'+self.dataroot+'/test', '*' + '.bmp')))
-            #     self.I = [img.replace('test', 'I') for img in self.dif]
-            #     P = [img.replace('test', 'P') for img in self.dif]
-            #     self.P = [img.replace('bmp', 'mat') for img in P]
-            # elif self.dataroot in ['0330_crop']:
-            #     self.dif = sorted(glob.glob(os.path.join('/data/shahao/'+self.dataroot, '*' + '_dif.png')))
-            #     self.I = [img.replace('dif', 'I') for img in self.dif]
-            #     self.P = [img.replace('dif', 'P') for img in self.dif]
-            # elif self.dataroot in ['0513']: # hela
-            #     self.dif = []             
-            #     dir = '/data/shahao/0513_new/test'
-            #     list_file = os.listdir(dir)
-            #     for ai in list_file:
-            #         sp = ai.split('_')
-            #         group = sp[0]
-            #         if group in ['5', '6', '11', '12', '14', '17']:
-            #             self.dif.append(os.path.join(dir, ai))
-            #     self.I = [img.replace('test', 'I') for img in self.dif]
-            #     P = [img.replace('test', 'P') for img in self.dif]
-            #     self.P = [img.replace('bmp', 'mat') for img in P]
-            # elif self.dataroot == 'simu':
-            #     self.dif = sorted(glob.glob("/data/shahao/simu/simu_scatter11"+"/test/*.bmp")) #train_input_amp1_00000.npy
-            #     self.I = [img.replace('simu_scatter11/test', 'simu/I') for img in self.dif]   #train_amp/train_amp1_00000.bmp
-            #     self.P = [img.replace('I','P').replace('amp', 'angle') for img in self.I]   #train_phase/train_angle1_00000.bmp
-
-            # elif self.dataroot in ['0513_video']:                
-            #     self.dif = sorted(glob.glob(os.path.join('/data/shahao/'+self.dataroot+'/test_5', '*' + '.bmp')))
-            #     self.I = self.dif
-            #     self.P = self.dif
-
 
         assert(self.opt.load_size >= self.opt.crop_size)   # crop_size should be smaller than the size of loaded image
         self.input_nc = 1

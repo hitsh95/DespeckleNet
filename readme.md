@@ -21,29 +21,29 @@ pip install -r requirement.txt
 ```
 
 ## Dataset preparing
-We provide representitive testing dataset due to the limits of the upload file size, including the Hela cells with Petri dish and the nasopharyngeal carcinoma cell with thin tape. Please put these datasets on ../datasets/test/xxx
-```
-For training dataset, Please put the dataset on ../datasets/train/xxx
-```
+Here we provide representative despeckle image pairs upon c666-1 datasets due to the limits of the upload file size. For the entire datasets and weights files, please feel free to contact us.
+
+**For testing dataset, please put it on ../datasets/test/xxx**
+
+**For training dataset, please put it on ../datasets/train/xxx**
+
 ## Training process
 
 Run 
 ```
-python3 train.py --dataroot hela_cell --gpu_ids 0,1  --checkpoints_dir ./checkpoints/ckp_hela_complex --batch_size 16  --ngf 64  --no_flip
+python3 train.py --dataroot xxx --gpu_ids 0,1  --checkpoints_dir ./checkpoints/xxx --batch_size 16  --ngf 64  --no_flip
 ```
+the traing dataroot should be one of [breast_cancer_cell, hela_cell, breast_cancer_tissue, nasopharyngeal_carcinoma_cell, simu_scatter11,simu_scatter5,simu_scatter9, simu_scatter7, simu_scatter13]
+
 ## Testing process
 
-For Hela cell despeckle results, run:
-```
-python3 test.py --dataroot hela_cell  --checkpoints_dir ./checkpoints/ckp_hela_complex  --ngf 64 --results_dir ./results/ckp_hela_complex
-```
-
-For nasopharyngeal_carcinoma_cell despeckle results, run:
+For nasopharyngeal_carcinoma_cell(c666-1) despeckle results, run:
 ```
 python3 test.py --dataroot nasopharyngeal_carcinoma_cell  --checkpoints_dir ./checkpoints/ckp_C666_complex  --ngf 64 --results_dir ./results/ckp_C666_complex
 ```
 
-The default results are saved in ./results/xxx/dif2IP/test_latest/images, where xxx_fake_BI.bmp and xxx_fake_BP.mat are the outputs of our network, xxx_real_BI.bmp and xxx_real_BP.mat are the ground truths, and the xxx_real_A.bmp is the speckle image. You can also open ./results/xxx/dif2IP/test_latest/images/index.html to check the entire results.
+the testing dataroot should be one of [breast_cancer_cell, hela_cell, breast_cancer_tissue, nasopharyngeal_carcinoma_cell, simu_scatter11,simu_scatter5,simu_scatter9, simu_scatter7, simu_scatter13]
+
+The default results are saved in ./results/xxx/dif2IP/test_latest/images, where xxx_fake_xxx are the outputs of our network, xxx_real_xxx are the ground truths, and the xxx_real_A.bmp is the speckle image. You can also open ./results/xxx/dif2IP/test_latest/images/index.html to check the results.
 
 
-Here we present the despeckle results of two representative datasets c666-1 and Hela. For more results please see the manuscript.
