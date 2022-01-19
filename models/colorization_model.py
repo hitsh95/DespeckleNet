@@ -1,14 +1,14 @@
-from .pix2pix_model import Pix2PixModel
+from .despeckle_model import DespeckleModel
 import torch
 from skimage import color  # used for lab2rgb
 import numpy as np
 
 
-class ColorizationModel(Pix2PixModel):
-    """This is a subclass of Pix2PixModel for image colorization (black & white image -> colorful images).
+class ColorizationModel(DespeckleModel):
+    """This is a subclass of DespeckleModel for image colorization (black & white image -> colorful images).
 
     The model training requires '-dataset_model colorization' dataset.
-    It trains a pix2pix model, mapping from L channel to ab channels in Lab color space.
+    It trains a Despeckle model, mapping from L channel to ab channels in Lab color space.
     By default, the colorization dataset will automatically set '--input_nc 1' and '--output_nc 2'.
     """
     @staticmethod
@@ -25,7 +25,7 @@ class ColorizationModel(Pix2PixModel):
         By default, we use 'colorization' dataset for this model.
         See the original pix2pix paper (https://arxiv.org/pdf/1611.07004.pdf) and colorization results (Figure 9 in the paper)
         """
-        Pix2PixModel.modify_commandline_options(parser, is_train)
+        DespeckleModel.modify_commandline_options(parser, is_train)
         parser.set_defaults(dataset_mode='colorization')
         return parser
 
@@ -41,7 +41,7 @@ class ColorizationModel(Pix2PixModel):
         we convert the Lab image 'fake_B' (inherited from Pix2pixModel) to a RGB image 'fake_B_rgb'.
         """
         # reuse the pix2pix model
-        Pix2PixModel.__init__(self, opt)
+        DespeckleModel.__init__(self, opt)
         # specify the images to be visualized.
         self.visual_names = ['real_A', 'real_B_rgb', 'fake_B_rgb']
 

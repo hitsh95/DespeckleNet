@@ -21,9 +21,5 @@ class TestOptions(BaseOptions):
         parser.add_argument('--num_test', type=int, default=100, help='how many test images to run')
         parser.add_argument('--continue_train', action='store_true', help='continue training: load the latest model')
         parser.add_argument('--epoch_count', type=int, default=1, help='the starting epoch count, we save the model by <epoch_count>, <epoch_count>+<save_latest_freq>, ...')
-        # rewrite devalue values
-        # parser.set_defaults(model='pix2pix')
-        # To avoid cropping, the load_size should be the same as crop_size
-        # parser.set_defaults(load_size=parser.get_default('crop_size'))
         self.isTrain = False
         return parser

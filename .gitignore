@@ -106,7 +106,7 @@ venv.bak/
 /checkpoints
 /tb_log
 .DS_Store
-
+/results
 
 # PyCharm
 .idea/

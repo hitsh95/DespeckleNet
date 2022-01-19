@@ -81,7 +81,7 @@ def save_images(webpage, visuals, image_path, dataroot, aspect_ratio=1.0, width=
             save_path_mat = save_path.replace('png','mat')
             im_mat = {}
             im_mat['phase'] = im
-            # savemat(save_path_mat, im_mat)
+            savemat(save_path_mat, im_mat)
             mi,ma = im.min(), im.max()
             im = (im-mi)/(ma-mi) * 255
             im = im.astype(np.uint8)
@@ -118,9 +118,9 @@ def save_images(webpage, visuals, image_path, dataroot, aspect_ratio=1.0, width=
     #     links.append(image_name)
     # I_ssim = structural_similarity(tem['fake_BI'], tem['real_BI'],multichannel=True) 
     # I_ssim = 0
-    message = "%s\tI_ssim: %.3f \tI_mse: %.3f\tP_ssim: %.3f\tP_mse: %.3f" % (name, I_s,I_m,P_s,P_m)
-    with open('test_log.txt', 'a') as f:
-        f.write('%s\n' % message)
+    # message = "%s\tI_ssim: %.3f \tI_mse: %.3f\tP_ssim: %.3f\tP_mse: %.3f" % (name, I_s,I_m,P_s,P_m)
+    # with open('test_log.txt', 'a') as f:
+    #     f.write('%s\n' % message)
  
     webpage.add_images(ims, txts, links, width=width)
 

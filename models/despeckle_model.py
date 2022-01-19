@@ -6,17 +6,17 @@ from torch.nn import functional as F
 
 ''' based on GAN '''
 
-class Pix2PixModel(BaseModel):
+class DespeckleModel(BaseModel):
     @staticmethod
     def modify_commandline_options(parser, is_train=True):        
-        parser.set_defaults(netG='unet_256', dataset_mode='aligned')
+        parser.set_defaults(netG='complex_unet', dataset_mode='aligned')
         if is_train:
             parser.set_defaults(pool_size=0, gan_mode='vanilla')
             parser.add_argument('--lambda_L1', type=float, default=100.0, help='weight for L1 loss')
         return parser
 
     def __init__(self, opt):
-        """Initialize the pix2pix class.
+        """Initialize the DespeckleModel class.
 
         Parameters:
             opt (Option class)-- stores all the experiment flags; needs to be a subclass of BaseOptions
