@@ -32,6 +32,7 @@ You can download part of the datasets on [Google Drive](https://drive.google.com
 Due to the upload file size limitation, we provide representative despeckle image pairs and weight files over the c666-1 dataset in the zip file. Unzip it and run: 
 
 ```
+cd Deepdescpeckle 
 python3 test.py --dataroot nasopharyngeal_carcinoma_cell  --checkpoints_dir ./checkpoints/ckp_C666_complex  --ngf 64 --results_dir ./results/ckp_C666_complex
 ```
 
