@@ -51,4 +51,5 @@ The testing dataroot should be one of the [breast_cancer_cell, hela_cell, breast
 
 The default results are saved in ./results/xxx/dif2IP/test_latest/images, where xxx_fake_xxx are the outputs of our network, xxx_real_xxx are the ground truths, and the xxx_real_A.bmp is the speckle image. You can also open ./results/xxx/dif2IP/test_latest/images/index.html to check the results.
 
-
+## Common problem
+When you encounter any problems please contact us by email <shahao@stu.hit.edu.cn>
