@@ -64,4 +64,4 @@ The testing dataroot should be one of the [breast_cancer_cell, hela_cell, breast
 
 
 ## Common problem
-When you encounter any problems please contact us by email <shahao@stu.hit.edu.cn>
+When you encounter any problems please contact us by email <ybzhang08@hit.edu.cn> or <shahao@stu.hit.edu.cn> 
