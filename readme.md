@@ -22,7 +22,7 @@ pip install -r requirement.txt
 ```
 
 ## Dataset preparing
-Here we provide representative despeckle image pairs over c666-1 datasets due to the limits of the upload file size. For the entire datasets and weights files, please feel free to contact us.
+Here we provide representative despeckle image pairs over c666-1 datasets due to the limits of the upload file size. For the entire datasets, please feel free to contact us.
 
 **For testing dataset, please put it on ../datasets/test/xxx**
 
@@ -35,6 +35,8 @@ Run
 python3 train.py --dataroot xxx --gpu_ids 0,1  --checkpoints_dir ./checkpoints/xxx --batch_size 16  --ngf 64  --no_flip
 ```
 the traing dataroot should be one of the [breast_cancer_cell, hela_cell, breast_cancer_tissue, nasopharyngeal_carcinoma_cell, simu_scatter4,simu_scatter6,simu_scatter8, simu_scatter10, simu_scatter12]
+
+You can download the pre-trained weights files on [Google Drive](https://drive.google.com/drive/folders/1-KcDxA5QWE8G-_YlJphAYG-20pO4x5rx?usp=sharing)
 
 ## Testing process
 
