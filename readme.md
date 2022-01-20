@@ -22,7 +22,7 @@ pip install -r requirement.txt
 ```
 
 ## Dataset preparing
-Here we provide representative despeckle image pairs upon c666-1 datasets due to the limits of the upload file size. For the entire datasets and weights files, please feel free to contact us.
+Here we provide representative despeckle image pairs over c666-1 datasets due to the limits of the upload file size. For the entire datasets and weights files, please feel free to contact us.
 
 **For testing dataset, please put it on ../datasets/test/xxx**
 
