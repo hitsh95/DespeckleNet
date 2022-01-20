@@ -8,22 +8,22 @@ from skimage.metrics import structural_similarity, peak_signal_noise_ratio, mean
 import numpy as np
 import csv
 
-# results = ['ckp_simu5_complex','ckp_simu7_complex','ckp_simu9_complex']
+# results = ['ckp_simu4_complex','ckp_simu6_complex','ckp_simu8_complex']
 
-# gts = ['simu/simu_scatter5/test', 'simu/simu_scatter7/test', 'simu/simu_scatter9/test']
+# gts = ['simu/simu_scatter10/test', 'simu/simu_scatter10/test', 'simu/simu_scatter10/test']
 results = [
-    'ckp_simu5_complex', 
-    'ckp_simu7_complex', 
-    'ckp_simu9_complex', 
-    'ckp_simu11_complex', 
-    'ckp_simu13_complex']
+    'ckp_simu4_complex', 
+    'ckp_simu6_complex', 
+    'ckp_simu8_complex', 
+    'ckp_simu10_complex', 
+    'ckp_simu12_complex']
 
 gts = [
-    'simu/simu_scatter5/test', 
-    'simu/simu_scatter7/test', 
-    'simu/simu_scatter9/test', 
-    'simu/simu_scatter11/test', 
-    'simu/simu_scatter13/test', 
+    'simu/simu_scatter4/test', 
+    'simu/simu_scatter6/test', 
+    'simu/simu_scatter8/test', 
+    'simu/simu_scatter10/test', 
+    'simu/simu_scatter12/test', 
 ]
 
 # results = ['ckp_0330_complex', 'ckp_0330_real', \

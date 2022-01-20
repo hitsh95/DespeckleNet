@@ -29,7 +29,7 @@ class AlignedDataset(BaseDataset):
         self.dataroot = opt.dataroot
 
         if self.opt.phase == 'train':
-            if self.dataroot not in ['simu_scatter5', 'simu_scatter7', 'simu_scatter9', 'simu_scatter11', 'simu_scatter13']:
+            if self.dataroot not in ['simu_scatter4', 'simu_scatter6', 'simu_scatter8', 'simu_scatter10', 'simu_scatter12']:
                 self.dif = sorted(glob.glob(os.path.join('../datasets/train/'+self.dataroot+'/dif', '*' + '.bmp')))
                 print('../datasets/train/'+self.dataroot+'/dif', '*' + '.bmp')
                 self.I = [img.replace('dif', 'I') for img in self.dif]
@@ -42,12 +42,12 @@ class AlignedDataset(BaseDataset):
          
         else:
             # all_data
-            if self.dataroot not in ['simu_scatter5', 'simu_scatter7', 'simu_scatter9', 'simu_scatter11', 'simu_scatter13', \
+            if self.dataroot not in ['simu_scatter4', 'simu_scatter6', 'simu_scatter8', 'simu_scatter10', 'simu_scatter12', \
                 'living_hela_video', 'breast_cancer_tissue_2048']:
                 self.dif = sorted(glob.glob(os.path.join('../datasets/test/'+self.dataroot+'/dif', '*' + '.bmp')))
                 self.I = [img.replace('dif', 'I') for img in self.dif]
                 self.P = [img.replace('dif', 'P').replace('bmp', 'mat') for img in self.dif]
-            elif self.dataroot in ['simu_scatter5', 'simu_scatter7', 'simu_scatter9', 'simu_scatter11', 'simu_scatter13']:
+            elif self.dataroot in ['simu_scatter4', 'simu_scatter6', 'simu_scatter8', 'simu_scatter10', 'simu_scatter12']:
                 self.dif = sorted(glob.glob(os.path.join('../datasets/test/'+self.dataroot+'/dif', '*' + '.bmp')))
                 self.I = [img.replace('dif', 'I') for img in self.dif]
                 self.P = [img.replace('dif', 'P').replace('amp','angle') for img in self.dif]
@@ -89,7 +89,7 @@ class AlignedDataset(BaseDataset):
         A = Image.fromarray(img_dif)
         B1 = Image.open(B1_path)
 
-        if self.dataroot not in ['simu_scatter5', 'simu_scatter7', 'simu_scatter9', 'simu_scatter11', 'simu_scatter13', \
+        if self.dataroot not in ['simu_scatter4', 'simu_scatter6', 'simu_scatter8', 'simu_scatter10', 'simu_scatter12', \
                 'living_hela_video', 'breast_cancer_tissue_2048']:
             B2 = loadmat(B2_path)['phase_save']
         else:
@@ -102,7 +102,7 @@ class AlignedDataset(BaseDataset):
         A = transform(A)
         B1 = transform(B1)
         
-        if self.dataroot not in ['simu_scatter5', 'simu_scatter7', 'simu_scatter9', 'simu_scatter11', 'simu_scatter13', \
+        if self.dataroot not in ['simu_scatter4', 'simu_scatter6', 'simu_scatter8', 'simu_scatter10', 'simu_scatter12', \
                 'living_hela_video', 'breast_cancer_tissue_2048']:
             B2 = torch.from_numpy(B2).type(torch.FloatTensor).unsqueeze(dim=0) 
         else:

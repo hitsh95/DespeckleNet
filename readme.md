@@ -22,11 +22,13 @@ pip install -r requirement.txt
 ```
 
 ## Dataset preparing
-Here we provide representative despeckle image pairs over c666-1 datasets due to the limits of the upload file size. For the entire datasets, please feel free to contact us.
+Here we provide representative despeckle image pairs over c666-1 datasets due to the limits of the upload file size. 
 
 **For testing dataset, please put it on ../datasets/test/xxx**
 
 **For training dataset, please put it on ../datasets/train/xxx**
+
+You can also download part of the datasets on [Google Drive](https://drive.google.com/drive/folders/1jF5DLO8Ug0hElA0rOrNcWN_RJUkaqjCp?usp=sharing), and we will open souce the entire data soon.
 
 ## Training process
 
