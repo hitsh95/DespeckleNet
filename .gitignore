@@ -107,6 +107,7 @@ venv.bak/
 /tb_log
 .DS_Store
 /results
+._readme.md
 
 # PyCharm
 .idea/
